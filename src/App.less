@@ -1,20 +1,63 @@
 @heightNav: 15vh;
-@app-primary: #0f0f;
+@app-primary: #fafaf6;
 @app-secondary: #e94560;
+@basicBorder: 1px solid black;
+@titleFont: 'Newsreader', serif;
 
+@import url('https://fonts.googleapis.com/css2?family=Newsreader&display=swap');
 body {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
+  background-color: @app-primary;
 }
 
-h1 {
-  color:@app-secondary
-}
 
 nav {
   border: 1px solid black;
   height: @heightNav;
-  background-color: #e8ffe8;
-  color: @app-secondary;
+  background-color:black;
+
+  display: flex;
+  align-items: center;
+  padding: 8px;
+
+  >h1{
+    opacity: 30;
+    color: grey;
+  }
 }
+
+main {
+  height: 100vh;
+}
+
+.titleWrapper {
+  width: 25%;
+  height: 68%;
+  font-size: 10rem;
+  font-family: @titleFont;
+  padding: 24px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  >.one{
+    margin-bottom: 32px;
+  }
+
+  >.two{
+    font-size: 7rem;
+  }
+
+  >.three{
+    margin-top: 32px;
+  }
+  
+}
+
+
+
+
+
