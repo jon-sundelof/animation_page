@@ -1,0 +1,14 @@
+$app-shadow-color: #571d58;
+$app-secondary: #e94560;
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: $app-shadow-color;
+}
+::-webkit-scrollbar-thumb{
+  background-color: $app-shadow-color;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-corner{
+  background-color: $app-secondary;
+}

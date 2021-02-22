@@ -1,0 +1,53 @@
+$titleFont: 'RocknRoll One', sans-serif;
+$app-shadow-color: #571d58;
+$font-size: 2.2rem;
+
+.aboutWrapper {
+  margin-top: 0;
+  width: 60%;
+  height: 40vh;  
+}
+
+.headerAbout {
+    width: 90%;
+    font-family: $titleFont;
+    display: flex;
+    flex-flow: column wrap;
+   
+
+    >.mainText {
+        width: 50%;
+        margin: 32px;
+
+        >h1{
+            font-size: 5rem;
+            margin: 16px;
+            color: #B5D3E6;
+            text-shadow: 0 1px 0 $app-shadow-color, 0 2px 0 $app-shadow-color, 0 3px 0 $app-shadow-color, 0 4px 0 $app-shadow-color,
+            0 5px 0 $app-shadow-color, 0 6px 0 $app-shadow-color, 0 7px 0 $app-shadow-color, 0 8px 0 $app-shadow-color, 0 9px 0 $app-shadow-color,
+            0 50px 25px rgba(0, 0, 0, 0.2);
+    
+            >span{
+                color: #000AFF;
+            }
+        }
+    }
+
+    
+
+    >.infoText {
+        align-self: center;
+        width: 50%;
+        height: 5%;
+        font-size: $font-size;
+        color: #000AFF;
+        padding: 8px;
+        margin: 16px;
+        margin-top: 40px;
+
+          >span{
+            font-size: 2.6rem;
+            color: #B5D3E6;
+          }
+    }
+}

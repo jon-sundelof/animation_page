@@ -1,0 +1,196 @@
+@import "./styles/_scrollbar";
+@import "styles/_main";
+@import "./styles/_about";
+
+$heightNav: 8vh;
+$app-primary: #fafaf6;
+$app-secondary: #e94560;
+$app-third: #88bef5;
+$app-shadow-color: #571d58;
+$cloud-color: #571d5883;
+$basicBorder: 1px solid black;
+$titleFont: 'RocknRoll One', sans-serif;
+$steps: 0;
+
+// import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+body {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  background-color: $app-secondary;
+}
+
+
+nav {
+  height: $heightNav;
+  width: 98vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px;
+  
+  >ul{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: $app-primary;
+    list-style: none;
+    font-family: $titleFont;
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px $app-shadow-color,
+        1px 1px 1px $app-shadow-color,
+        1px 2px 1px $app-shadow-color,
+        1px 3px 1px $app-shadow-color,
+        1px 4px 1px $app-shadow-color,
+        1px 5px 1px $app-shadow-color,
+        1px 6px 1px $app-shadow-color,
+    1px 10px 6px rgba(16,16,16,0.4),
+    1px 14px 10px rgba(16,16,16,0.2),
+    1px 17px 35px rgba(16,16,16,0.2),
+    1px 18px 60px rgba(16,16,16,0.4);
+  }
+
+}
+
+
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+
+  font-family: $titleFont;
+
+  .container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 40%;
+    border: 1px solid black;
+
+      >p{
+        margin: 16px;
+        font-size: 2rem;
+      }
+  }
+  
+}
+
+
+::selection {
+  background: transparent;
+}
+/* CLOUDS */
+/* header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  margin: auto;
+  border-radius: 100%;
+  background: transparent;
+  display: block;
+  box-shadow: 0 200px 150px 100px $cloud-color,
+    200px 500px 200px 150px $cloud-color,
+    -250px 300px 300px 150px $cloud-color,
+    550px 150px 300px 200px $cloud-color,
+    -550px 450px 300px 200px $cloud-color;
+} */
+/* JUMP */
+.bouncing-header {
+  cursor: default;
+  position: absolute;
+  top: -15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  margin: auto;
+  display: block;
+  text-align: center;
+}
+
+.bouncing-header span {
+  position: relative;
+  top: 10px;
+  display: inline-block;
+  animation: bounce 0.3s ease infinite alternate;
+  font-size: 80px;
+  color: #fff;
+  text-shadow: 0 1px 0 $app-shadow-color, 0 2px 0 $app-shadow-color, 0 3px 0 $app-shadow-color, 0 4px 0 $app-shadow-color,
+    0 5px 0 $app-shadow-color, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.bouncing-header span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.bouncing-header span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.bouncing-header span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.bouncing-header span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.bouncing-header span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.bouncing-header span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.bouncing-header span:nth-child(8) {
+  animation-delay: 0.2s;
+}
+
+.bouncing-header span:nth-child(9) {
+  animation-delay: 0.3s;
+}
+
+.bouncing-header span:nth-child(10) {
+  animation-delay: 0.4s;
+}
+
+.bouncing-header span:nth-child(11) {
+  animation-delay: 0.5s;
+}
+
+.bouncing-header span:nth-child(12) {
+  animation-delay: 0.6s;
+}
+
+.bouncing-header span:nth-child(13) {
+  animation-delay: 0.7s;
+}
+
+.bouncing-header span:nth-child(14) {
+  animation-delay: 0.8s;
+}
+
+/* ANIMATION */
+@keyframes bounce {
+  100% {
+    top: -5px;
+    text-shadow: 0 1px 0 $app-shadow-color, 0 2px 0 $app-shadow-color, 0 3px 0 $app-shadow-color, 0 4px 0 $app-shadow-color,
+      0 5px 0 $app-shadow-color, 0 6px 0 $app-shadow-color, 0 7px 0 $app-shadow-color, 0 8px 0 $app-shadow-color, 0 9px 0 $app-shadow-color,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
