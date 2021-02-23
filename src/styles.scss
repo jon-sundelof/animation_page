@@ -54,9 +54,17 @@ nav {
     1px 18px 60px rgba(16,16,16,0.4);
   }
 
+  >ul > li:hover{
+    animation: navAnim 0.3s ease infinite alternate;
+  }
+
 }
 
-
+@keyframes navAnim {
+  100% {
+    margin-top: -10px;
+  }
+}
 
 header {
   display: flex;

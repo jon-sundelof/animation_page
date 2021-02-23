@@ -1,14 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import TextTransition, { presets } from "react-text-transition";
+import Hand from '../img/pink-two.png'
 
 const TEXTS = [
     "Website",
     "Dreams",
-    "Ideas"
+    "Ideas",
+    "Goals",
+    "Ambitions",
+    "Work"
 ];
 
 const About = () => {
     const [index, setIndex] = useState(0);
+    const [moveHand, setMoveHand] = useState(false)
 
     useEffect(() => {
         const intervalId = setInterval(() =>
@@ -16,7 +21,8 @@ const About = () => {
           3000
         );
         return () => clearTimeout(intervalId);
-      }, []);
+    }, []);
+
 
     return (
         <div className="aboutWrapper">
@@ -27,11 +33,11 @@ const About = () => {
                     springConfig={ presets.molasses }
                     /></span> come true</h1>
                 </div>
-                
-
-            <p className="infoText">
+                <img id="hand-gesture" className={moveHand ? "moveHand" : ""} src={Hand}/>
+            {/* <p className="infoText">
                 With an eye for <span>style</span> and a little touch of <span>brainpower</span> we can create anything here at J & J!
-            </p>
+            </p> */}
+            
             </div>
         </div>
     )
