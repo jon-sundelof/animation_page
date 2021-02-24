@@ -1,6 +1,8 @@
 @import "./styles/_scrollbar";
 @import "styles/_main";
 @import "./styles/_about";
+@import "./styles/_projects";
+@import "./styles/_svg";
 
 $heightNav: 8vh;
 $app-primary: #fafaf6;
@@ -12,17 +14,62 @@ $basicBorder: 1px solid black;
 $titleFont: 'RocknRoll One', sans-serif;
 $steps: 0;
 
+$bg--light: #e94560;
+$bg--dark: #3a1118;
+
 // import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+$themes: (
+        light: (
+                bg: $bg--light,
+                // card-bg: $bg--card--light,
+                // text: $text--light,
+                // text-secondary: $text--2--light,
+                // link: $brand--blue--light,
+                // hover: $hover--light,
+                // border: $border--light
+        ),
+        dark: (
+                bg: $bg--dark,
+                // card-bg: $bg--card--dark,
+                // text: $text--dark,
+                // text-secondary: $text--2--dark,
+                // link: $brand--blue--dark,
+                // hover: $hover--dark,
+                // border: $border--dark
+        ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
 
 body {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-  background-color: $app-secondary;
+  background-color: $bg--light;
 }
 
-
 nav {
+ @include themed() {
+   background-color: t('bg');
+ }
+
   height: $heightNav;
   width: 98vw;
   display: flex;
@@ -57,6 +104,10 @@ nav {
   >ul > li:hover{
     animation: navAnim 0.3s ease infinite alternate;
   }
+  >.fa-music{
+    color: #fff;
+  }
+
 
 }
 

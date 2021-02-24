@@ -1,0 +1,49 @@
+
+@keyframes moveCloud {
+    from {
+      transform: translateX(0);
+
+    }
+    to {
+      transform: translateX(1200px);
+    }
+  }
+
+@keyframes moveSunAndMoon {
+    from {
+      transform: translateX(-600px);
+
+    }
+    to {
+      transform: translateX(-150px);
+    }
+  }
+  
+
+.cloud-svg {
+z-index: -1;
+height: 48%;
+position: absolute;
+left: 50px;
+top: 10px;
+animation: moveCloud 14s alternate infinite;
+}
+
+.sun-svg{
+    z-index: -2;
+    cursor: pointer;
+    position: absolute;
+    left: 50px;
+    top:-50px;
+    animation: moveSunAndMoon 15s alternate infinite;
+    /* pointer-events: none; */
+}
+
+.moon-svg{
+    z-index: -2;
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    height: 40%;
+    animation: moveSunAndMoon 15s alternate infinite;
+}

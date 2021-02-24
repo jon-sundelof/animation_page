@@ -8,7 +8,8 @@ const TEXTS = [
     "Ideas",
     "Goals",
     "Ambitions",
-    "Work"
+    "Work",
+    "Startup"
 ];
 
 const About = () => {
@@ -34,11 +35,12 @@ const About = () => {
                     /></span> come true</h1>
                 </div>
                 <img id="hand-gesture" className={moveHand ? "moveHand" : ""} src={Hand}/>
-            {/* <p className="infoText">
-                With an eye for <span>style</span> and a little touch of <span>brainpower</span> we can create anything here at J & J!
-            </p> */}
             
             </div>
+            <p className="infoText">
+                With an eye for <span>style</span> and a little touch of <span>brainpower</span> we can create anything here at J & J!
+                If you can <span>dream</span> it, you can <span>make</span> it! We dont just make <span>websites</span>, we make <span>art</span>!
+            </p>
         </div>
     )
 }
