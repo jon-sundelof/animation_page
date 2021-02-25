@@ -1,35 +1,48 @@
 import React, {useState} from 'react'
 import useSound from 'use-sound';
-
 import Bounce from '../sounds/bounce-nav.wav'
+import { useSelector, useDispatch } from 'react-redux'
+import { setvolume } from './redux/actions'
+
 
 const Navbar = ({theme}) => {
-    const [soundIcon, setSoundIcon] = useState(false)
-    const [sfxVolume, setSfxVolume] = useState(0)
-    const [play] = useSound(Bounce, {volume: sfxVolume});
+    const volume = useSelector(state => state.Soundvolume)
+    const dispatch = useDispatch()
 
-    const BounceSfx = () => play()
+    const [soundIcon, setSoundIcon] = useState(false)
+    const [bouncePlayed, setBouncePlayed] = useState(false)
+    const [play] = useSound(Bounce, {volume: volume});
+
+
+    const BounceSfx = () =>{
+        if(bouncePlayed) return
+        play()
+        setBouncePlayed(true)
+        setTimeout(() => {
+            setBouncePlayed(false)
+        }, 300)
+
+    }
 
     const EnableSfx = () => {
         setSoundIcon(!soundIcon)
-        
-        if(sfxVolume > 0){
-            setSfxVolume(0)
+
+        if(volume > 0){
+            dispatch(setvolume(0))
         } else {
-            setSfxVolume(0.45)
-        }    
+            dispatch(setvolume(0.45))
+        }
     }
 
-    console.log(theme)
 
     return (
-        <nav className={theme = 'dark' ? 'theme--dark' : 'theme--light'}>
+        <nav>
             <ul>
                 <li onMouseEnter={() => BounceSfx()}>PROJECTS</li>
                 <li onMouseEnter={BounceSfx}>J & J</li>
                 <li onMouseEnter={BounceSfx}>CONTACT</li>
                 <li onClick={EnableSfx} onMouseEnter={BounceSfx}>
-                    {soundIcon ? <i class="fas fa-volume-up"></i> : <i class="fas fa-volume-mute"></i>}
+                    {soundIcon ? <i className="fas fa-volume-up"></i> : <i className="fas fa-volume-mute"></i>}
                     </li>
             </ul>
         </nav>

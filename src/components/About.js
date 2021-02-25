@@ -35,7 +35,7 @@ const About = () => {
                     /></span> come true</h1>
                 </div>
                 <img id="hand-gesture" className={moveHand ? "moveHand" : ""} src={Hand}/>
-            
+
             </div>
             <p className="infoText">
                 With an eye for <span>style</span> and a little touch of <span>brainpower</span> we can create anything here at J & J!

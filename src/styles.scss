@@ -3,6 +3,7 @@
 @import "./styles/_about";
 @import "./styles/_projects";
 @import "./styles/_svg";
+@import "./styles/_contact";
 
 $heightNav: 8vh;
 $app-primary: #fafaf6;
@@ -12,50 +13,108 @@ $app-shadow-color: #571d58;
 $cloud-color: #571d5883;
 $basicBorder: 1px solid black;
 $titleFont: 'RocknRoll One', sans-serif;
-$steps: 0;
+$color-white: blue;
 
 $bg--light: #e94560;
-$bg--dark: #3a1118;
+$dark-background: #162129;
+$color-text-light: #e6e4e2;
+$shadow-color-light: #36454F;
+$span-color-light: #04b7ed;
+$color-scroll: #FFCE71;
+$padding: 0;
+$margin: 0;
+$sizing: border-box;
 
-// import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
-$themes: (
-        light: (
-                bg: $bg--light,
-                // card-bg: $bg--card--light,
-                // text: $text--light,
-                // text-secondary: $text--2--light,
-                // link: $brand--blue--light,
-                // hover: $hover--light,
-                // border: $border--light
-        ),
-        dark: (
-                bg: $bg--dark,
-                // card-bg: $bg--card--dark,
-                // text: $text--dark,
-                // text-secondary: $text--2--dark,
-                // link: $brand--blue--dark,
-                // hover: $hover--dark,
-                // border: $border--dark
-        ),
-);
+@mixin dark-theme {
+  background-color: $dark-background;
 
-@mixin themed() {
-  @each $theme, $map in $themes {
-    .theme--#{$theme} & {
-      $theme-map: () !global;
-      @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+  .mainText > h1{
+    color: $color-text-light;
+  }
+  .mainText > h1 > span  {
+    color: $span-color-light;
+  }
+
+  .infoText {
+    color: $color-text-light;
+  }
+
+  .contact-form {
+    background-color: #93cc5e;
+    >h1{
+      color: black;
+    }
+
+    >form{
+      >a{
+        color: #02574d;
+
+        >span:nth-child(1) {
+          background: linear-gradient(90deg, transparent, #009e94);
+        }
+        >span:nth-child(2) {
+          background: linear-gradient(90deg, transparent, #009e94);
+        }
+        >span:nth-child(3) {
+          background: linear-gradient(90deg, transparent, #009e94);
+        }
+        >span:nth-child(4) {
+          background: linear-gradient(90deg, transparent, #009e94);
+        }
       }
-      @content;
-      $theme-map: null !global;
+      >a:hover{
+        background: #009e94;
+        color: #02574d;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #009e94,
+        0 0 25px #009e94,
+        0 0 50px #009e94,
+        0 0 100px #009e94;
+      }
+
+
     }
   }
+
+  .box {
+    >input, textarea{
+      color: black;
+      border-bottom: 2px solid #000;
+    }
+    >label{
+      color: black;
+    }
+
+    >input:focus ~ label,
+     >input:valid ~ label {
+      color: #02574d;
+    }
+
+    >textarea:focus ~ label,
+    >textarea:valid ~ label {
+        color: #02574d;
+      }
+  }
+  /* ul{
+    color: #FFCE71;
+    text-shadow: 1px 1px 1px $shadow-color-light,
+    1px 1px 1px $shadow-color-light,
+    1px 2px 1px $shadow-color-light,
+    1px 3px 1px $shadow-color-light,
+    1px 4px 1px $shadow-color-light,
+    1px 5px 1px $shadow-color-light,
+    1px 6px 1px $shadow-color-light,
+    1px 10px 6px rgba(16,16,16,0.4),
+    1px 14px 10px rgba(16,16,16,0.2),
+    1px 17px 35px rgba(16,16,16,0.2),
+    1px 18px 60px rgba(16,16,16,0.4);
+  } */
 }
 
-@function t($key) {
-  @return map-get($theme-map, $key);
+
+.dark-theme {
+  @include dark-theme;
 }
 
 body {
@@ -65,28 +124,32 @@ body {
   background-color: $bg--light;
 }
 
-nav {
- @include themed() {
-   background-color: t('bg');
- }
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+}
 
+
+nav {
+  z-index: 9000;
   height: $heightNav;
   width: 98vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 8px;
-  
+
   >ul{
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     color: $app-primary;
     list-style: none;
     font-family: $titleFont;
     font-weight: 600;
     font-size: 1.4rem;
+    z-index: 99;
     cursor: pointer;
     text-shadow: 1px 1px 1px $app-shadow-color,
         1px 1px 1px $app-shadow-color,
@@ -99,6 +162,17 @@ nav {
     1px 14px 10px rgba(16,16,16,0.2),
     1px 17px 35px rgba(16,16,16,0.2),
     1px 18px 60px rgba(16,16,16,0.4);
+
+
+    >li{
+      z-index: 99;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 65px;
+    }
+
   }
 
   >ul > li:hover{
@@ -139,8 +213,10 @@ header {
         font-size: 2rem;
       }
   }
-  
+
 }
+
+
 
 
 ::selection {

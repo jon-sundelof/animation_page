@@ -18,32 +18,62 @@
       transform: translateX(-150px);
     }
   }
-  
+@keyframes moveStar {
+    from {
+      height: 15%;
+      transform: rotateZ(-5deg) rotateY(-15deg);
+
+    }
+    to {
+      height: 18%;
+      transform: rotateZ(5deg) rotateY(15deg);
+    }
+  }
+
+
+
 
 .cloud-svg {
-z-index: -1;
+  pointer-events: none;
 height: 48%;
 position: absolute;
 left: 50px;
 top: 10px;
-animation: moveCloud 14s alternate infinite;
+animation: moveCloud 16s alternate infinite;
 }
 
+.star-one {
+  pointer-events: none;
+position: absolute;
+left: 150px;
+top: 85px;
+animation: moveStar 6s alternate infinite;
+}
+.star-two {
+/*   pointer-events: none; */
+position: absolute;
+right: 350px;
+top: 85px;
+animation: moveStar 4s alternate infinite;
+}
+
+
+
+
 .sun-svg{
-    z-index: -2;
     cursor: pointer;
     position: absolute;
     left: 50px;
     top:-50px;
     animation: moveSunAndMoon 15s alternate infinite;
-    /* pointer-events: none; */
+
 }
 
 .moon-svg{
-    z-index: -2;
     position: absolute;
     left: 50px;
     top: 30px;
     height: 40%;
     animation: moveSunAndMoon 15s alternate infinite;
+    cursor: pointer;
 }

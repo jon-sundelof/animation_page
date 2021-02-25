@@ -33,7 +33,7 @@ $span-color: #000AFF;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
-   
+
 
     >.mainText {
         width: 60%;
@@ -46,9 +46,9 @@ $span-color: #000AFF;
             text-shadow: 0 1px 0 $app-shadow-color, 0 2px 0 $app-shadow-color, 0 3px 0 $app-shadow-color, 0 4px 0 $app-shadow-color,
             0 5px 0 $app-shadow-color, 0 6px 0 $app-shadow-color, 0 7px 0 $app-shadow-color, 0 8px 0 $app-shadow-color, 0 9px 0 $app-shadow-color,
             0 50px 25px rgba(0, 0, 0, 0.2);
-    
+
             >span{
-                color: $span-color;
+              color: $span-color;
             }
         }
     }
