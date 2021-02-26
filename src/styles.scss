@@ -26,6 +26,7 @@ $margin: 0;
 $sizing: border-box;
 
 
+
 @mixin dark-theme {
   background-color: $dark-background;
 
@@ -184,6 +185,7 @@ nav {
 
 
 }
+
 
 @keyframes navAnim {
   100% {

@@ -1,6 +1,7 @@
 // import './App.css';
 import React, {useState, useEffect} from 'react'
 import "./styles.scss"
+import "./styles-media.scss"
 import Navbar from "./components/Navbar"
 import Main from "./components/Main"
 import Header from "./components/Header"
@@ -24,7 +25,7 @@ function App() {
   time = today.getHours();
 
   useEffect(() => {
-    if(time > 17){
+    if(time > 17 || time < 6){
       setIsDay(false)
     } else {
       setIsDay(true)
@@ -76,7 +77,7 @@ function App() {
   return (
     <>
 
-    <div className={time > 17 ? "content-wrapper dark-theme" : "content-wrapper"}>
+    <div className={time > 17 || time < 6 ? "content-wrapper dark-theme" : "content-wrapper"}>
       <Navbar />
       <Header isDay={isDay}/>
       <Main />

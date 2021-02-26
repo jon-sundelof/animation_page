@@ -3,6 +3,7 @@ import useSound from 'use-sound';
 import Bounce from '../sounds/bounce-nav.wav'
 import { useSelector, useDispatch } from 'react-redux'
 import { setvolume } from './redux/actions'
+import { Link } from 'react-scroll'
 
 
 const Navbar = ({theme}) => {
@@ -39,8 +40,8 @@ const Navbar = ({theme}) => {
         <nav>
             <ul>
                 <li onMouseEnter={() => BounceSfx()}>PROJECTS</li>
-                <li onMouseEnter={BounceSfx}>J & J</li>
-                <li onMouseEnter={BounceSfx}>CONTACT</li>
+                <li onMouseEnter={BounceSfx}><Link to="aboutWrapper" smooth={true} spy={true} duration={500} >J & J</Link></li>
+                <li onMouseEnter={BounceSfx}><Link spy={true} to="contact-container" smooth={true}>CONTACT</Link></li>
                 <li onClick={EnableSfx} onMouseEnter={BounceSfx}>
                     {soundIcon ? <i className="fas fa-volume-up"></i> : <i className="fas fa-volume-mute"></i>}
                     </li>

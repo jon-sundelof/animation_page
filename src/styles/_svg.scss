@@ -15,7 +15,7 @@
 
     }
     to {
-      transform: translateX(-150px);
+      transform: translateX(0px);
     }
   }
 @keyframes moveStar {
@@ -38,7 +38,7 @@
 height: 48%;
 position: absolute;
 left: 50px;
-top: 10px;
+top: 60px;
 animation: moveCloud 16s alternate infinite;
 }
 

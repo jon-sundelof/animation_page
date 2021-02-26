@@ -16,7 +16,7 @@ const Main = () => {
                 <p className="subtitle">hardworking | enthusiasts | masterminds</p>
                 <p className="quote">“People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do.” <br /> – Rob Siltanen</p>
             </div> */}
-            <About />
+            <About id="about-section" />
 
         </main >
 

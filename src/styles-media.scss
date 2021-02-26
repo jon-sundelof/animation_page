@@ -1,0 +1,126 @@
+$tablet-view: 768px;
+$mobile-view: 400px;
+
+
+@keyframes moveCloudTablet {
+    from {
+      transform: translateX(0);
+
+    }
+    to {
+      transform: translateX(370px);
+    }
+  }
+@keyframes moveCloudMobile {
+    from {
+      transform: translateX(0);
+
+    }
+    to {
+      transform: translateX(140px);
+    }
+  }
+
+  @keyframes moveSunAndMoonTablet {
+    from {
+      transform: translateX(-400px);
+
+    }
+    to {
+      transform: translateX(50px);
+    }
+  }
+
+  @media (max-width: 768px){
+
+    .cloud-svg {
+        animation: moveCloudTablet 12s alternate infinite;
+        width: 50%;
+        height: 38%;
+        left: 10px;
+        }
+    .sun-svg {
+        animation: moveSunAndMoonTablet 12s alternate infinite;
+        width: 50%;
+        height: 38%;
+        left: 10px;
+        }
+  }
+
+
+
+@media (max-width: 400px) {
+    .content-wrapper {
+        width: 100%;
+    }
+    nav {
+        width: 95%;
+
+        >ul {
+            width: 100%;
+            font-size: 1.1rem;
+        }
+    }
+
+    header {
+        width: 90%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .bouncing-header span{
+        font-size: 50px;
+    }
+
+    .aboutWrapper {
+        width: 100%;
+        height: 100vh;
+
+        >.headerAbout{
+            >.mainText{
+                width: 100%;
+                margin: 8px;
+                >h1{
+                    font-size: 3.5rem;
+                    width: 100%;
+                }
+            }
+
+            >img {
+                display: none;
+            }
+        }
+
+        >.infoText{
+            font-size: 1.5rem;
+            width: 90%;
+            margin: 40px;
+
+            >span {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    .contact-container {
+        >.contact-form{
+            width: 340px;
+            margin: 0%;
+        }
+    }
+
+    .cloud-svg {
+        animation: moveCloudMobile 12s alternate infinite;
+        height: 40%;
+        width: 50%;
+        }
+    .sun-svg {
+top: 50px;
+        }
+
+    #hand-gesture {
+        width: 10%;
+    }
+}
